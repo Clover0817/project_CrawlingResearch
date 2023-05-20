@@ -159,9 +159,12 @@ class CoupangData:
                 discountPriceCommerce = 0
                 discountCouponName = 'sale'
                 discountDouble = 0
-                discountRateDouble = self.driver.find_element(By.CLASS_NAME, 'instant-discount-rate').text
-                discountRateDouble = discountRateDouble.replace('%', '')
-                discountRateDouble = int(discountRateDouble, base=0)
+                try:
+                    discountRateDouble = self.driver.find_element(By.CLASS_NAME, 'instant-discount-rate').text
+                    discountRateDouble = discountRateDouble.replace('%', '')
+                    discountRateDouble = int(discountRateDouble, base=0)
+                except NoSuchElementException:
+                    discountRateDouble = 0
                 discountCouponNameDouble = '알 수 없음'
                 totalPrice = price
                 bestRank = -1
