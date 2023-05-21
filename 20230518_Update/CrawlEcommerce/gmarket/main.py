@@ -62,7 +62,7 @@ class Gmarket:
 
         #로그인 여부
         if self.login_mode == 1:
-            GmarketData.login(self.driver)
+            self.GmarketData.login(self.driver)
 
     def search(self):
         self.GmarketData.total_ads()
