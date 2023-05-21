@@ -61,7 +61,7 @@ class Coupang:
 
         #로그인 여부
         if self.login_mode == 1:
-            CoupangData.login(self.driver)
+            self.CoupangData.login(self.driver)
 
     def search(self):
         self.CoupangData.total_ads()
